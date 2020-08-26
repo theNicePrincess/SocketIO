@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/socketio.js"></script>
+</head>
+
+<body>
+  <h2>命名空间</h2>
+  <script>
+    let con = io.connect('http://localhost:3000/qq')
+
+    con.on('connect', function () {
+      console.log("连接事件触发了")
+    })
+
+    con.on('news', function (data) {
+      console.log(data)
+    })
+
+  </script>
+</body>
+
+</html>

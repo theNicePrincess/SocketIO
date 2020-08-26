@@ -1,4 +1,4 @@
-var app = require('http').createServer(handler);
+var app = require('http').createServer(handler);  // 应用 服务
 var io = require('socket.io')(app);
 var fs = require('fs');
 

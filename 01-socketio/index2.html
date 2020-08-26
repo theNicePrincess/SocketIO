@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <h2>小红</h2>
+  <h2>小明</h2>
   <script>
     // console.log(io)
     // var con = io.connect("http://localhost:8081")
@@ -24,16 +24,11 @@
     })
 
     /* con.emit('my other event', {
-      username: '小红',
-      chatcontent: '吃饭了没----小红'
+      username: '小明',
+      chatcontent: '吃饭了没---小明'
     }) */
 
     con.on('hello', function (data) {
-      console.log(data)
-    })
-
-    // 监听新用户加入事件
-    con.on('addUser', function (data) {
       console.log(data)
     })
 
@@ -43,11 +38,14 @@
     })
 
 
+    // 监听新用户加入事件
+    con.on('addUser', function (data) {
+      console.log(data)
+    })
+
+
     function send() {
-      con.emit('my other event', {
-        username: '小红',
-        chatcontent: '吃饭了没----小红'
-      })
+      con.emit('sendUser', { username: '小明', from: 'CmN3TdwP0I-hk6qUAAAB', to: 'ZooGNqGfhwVR1HbFAAAD', content: '你好，小明，我是小红' })
     }
 
   </script>
